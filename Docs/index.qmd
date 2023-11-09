@@ -1,0 +1,63 @@
+
+  warning: false
+---
+
+# DASDAE
+
+The Distributed Acoustic Sensing Data Analysis Ecosystem:
+a collection of python libraries for distributed fiber optic sensing.
+
+
+[Code for DASDAE Packages](https://github.com/DASDAE/)
+
+Documentation [[stable](https://dasdae.org), [development](https://dasdae.quarto.pub/dasdae/)]
+
+
+
+# Overview
+
+The Distibuted Acoustic Sensing Data Analysis Ecosystem (DASDAE) organization
+seeks to provide a collection of interoperable Python libraries for 
+distributed acoustic sensing (DAS). 
+
+## Packages available
+
+[DASCore](https://github.com/DASDAE/dascore) is a foundational package of DASDAE. 
+It facilitates rapid development of other DASDAE packages that do more specialized analysis/visualization.
+It has a high standard of documentation, style and testing to ensure other DASDAE
+packages can reliably build on it. Additional DASCore tutorials and documentation can be 
+found [here](https://dascore.org).
+
+
+[externalio](https://github.com/DASDAE/externalio) is a package that allows users to plug in their own
+data formats without needing to incorporate those into the DASCore I/O 
+capabilities. This may be appropriate for new experimental or proprietary
+formats, or for users who are not yet comfortable enough with their coding skills
+to contribute to the general code base.
+
+[dasclients](https://github.com/DASDAE/dasclients) is a package ----with description to add---
+
+[MultiResViewer](https://github.com/DASDAE/MultiResViewer) is a package that enables 
+
+[low\_freq\_real\_time\_proc](https://github.com/DASDAE/low_freq_real_time_proc) is a package that
+enables creation of low-frequency versions of long DAS data streams in real time as files
+are acquired.
+
+[SpoolProcessing](https://github.com/DASDAE/SpoolProcessing) is a package ---with description to add----- 
+
+
+
+# Feedback and Support
+
+See the [contributing docs](contributing/contributing.qmd) for information about being a 
+contributor to DASDAE packages.
+
+Use the [project discussions](https://github.com/DASDAE/dascore/discussions) to ask a question
+about DASCore or the overall DASDAE organization. All other DASDAE packages maintain their own 
+discussions pages within their GitHub repositories. 
+
+Use the [project issues](https://github.com/DASDAE/dascore/issues) to report an issue with DASCore,
+or the relevant project issues page in any DASDAE repository to report issues with other
+packages.
+
+Additionally, relevant points of contact for each repository are listed [here](points-of-contact.md).
