@@ -1,0 +1,120 @@
+
+# --- Build system configuration
+
+[build-system]
+requires = [ "setuptools>=41", "setuptools-scm", "scikit-build"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[tool.setuptools]
+include-package-data = true
+packages = ["dasdae"]
+
+[tool.setuptools_scm]  # this empty section enables the tool
+
+# --- Project Metadata
+
+[project]
+name = "dasdae"
+dynamic = ["version"]  # version is fetched by setuptools-git-versioning
+
+authors = [
+  { name="Eileen Martin", email="eileenrmartin@mines.edu" },
+  { name="Derrick Chambers", email="chambers.ja.derrick@gmail.com" },
+]
+
+description = "A metapackage for the Distributed Acoustic Sensing Data Analysis Eco System"
+readme = "README.md"
+license = { file="License.txt" }
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Topic :: Scientific/Engineering",
+]
+
+keywords = ["geophysics", "distributed-acoustic-sensing"]
+
+# --- Dependencies
+
+dependencies = [
+     "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+
+docs = [
+    "jinja2",
+    "ipywidgets",
+]
+
+test = [
+    "coverage",
+    "coveralls",
+    "pre-commit",
+    "pytest",
+    "pytest-codeblocks",
+    "pytest-cov",
+    "twine",
+]
+
+
+dev = ["dasdae[test]", "dasdae[docs]"]
+
+# --- URLs for project
+
+[project.urls]
+"Bug Tracker" = "https://github.com/DASDAE/dasdae/issues"
+"Documentation" = "https://dasdae.org"
+"Homepage" = "https://dasdae.org"
+
+# --- External tool configuration
+
+[tool.ruff]
+
+# enable certain types of linting
+select = ["E", "F", "UP", "RUF", "I001", "D", "FA"]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "__init__.py"
+]
+
+# lowest python version supported
+target-version = "py310"
+
+fixable = ["ALL"]
+
+# List of codes to ignore
+ignore = ["D105", "D107", "D401", "D205"]
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+# config for docstring parsing
+[tool.ruff.pydocstyle]
+convention = "numpy"
