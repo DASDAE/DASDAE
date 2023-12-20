@@ -1,8 +1,7 @@
-
-  warning: false
 ---
-
-# DASDAE
+title: DASDAE
+warning: false
+---
 
 The Distributed Acoustic Sensing Data Analysis Ecosystem:
 a collection of python libraries for distributed fiber optic sensing.
@@ -20,7 +19,7 @@ The Distibuted Acoustic Sensing Data Analysis Ecosystem (DASDAE) organization
 seeks to provide a collection of interoperable Python libraries for 
 distributed acoustic sensing (DAS). 
 
-## Packages available
+## Packages
 
 [DASCore](https://github.com/DASDAE/dascore) is a foundational package of DASDAE. 
 It facilitates rapid development of other DASDAE packages that do more specialized analysis/visualization.
@@ -29,13 +28,13 @@ packages can reliably build on it. Additional DASCore tutorials and documentatio
 found [here](https://dascore.org).
 
 
-[externalio](https://github.com/DASDAE/externalio) is a package that allows users to plug in their own
+[externalio](https://github.com/DASDAE/externalio) is an example package which shows users how to create plugins to support their own
 data formats without needing to incorporate those into the DASCore I/O 
 capabilities. This may be appropriate for new experimental or proprietary
 formats, or for users who are not yet comfortable enough with their coding skills
 to contribute to the general code base.
 
-[dasclients](https://github.com/DASDAE/dasclients) is a package ----with description to add---
+[dasclients](https://github.com/DASDAE/dasclients) is a package for working with remote data and cloud resources.
 
 [MultiResViewer](https://github.com/DASDAE/MultiResViewer) is a package that enables 
 
@@ -60,4 +59,4 @@ Use the [project issues](https://github.com/DASDAE/dascore/issues) to report an 
 or the relevant project issues page in any DASDAE repository to report issues with other
 packages.
 
-Additionally, relevant points of contact for each repository are listed [here](points-of-contact.md).
+Additionally, relevant points of contact for each repository are listed [here](points_of_contact.qmd).
