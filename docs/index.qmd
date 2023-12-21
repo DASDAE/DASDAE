@@ -36,13 +36,16 @@ to contribute to the general code base.
 
 [dasclients](https://github.com/DASDAE/dasclients) is a package for working with remote data and cloud resources.
 
-[MultiResViewer](https://github.com/DASDAE/MultiResViewer) is a package that enables 
+[MultiResViewer](https://github.com/DASDAE/MultiResViewer) is a package that enables multi-resolution 
+visualization of large-scale high-resolution data. 
 
 [low\_freq\_real\_time\_proc](https://github.com/DASDAE/low_freq_real_time_proc) is a package that
 enables creation of low-frequency versions of long DAS data streams in real time as files
-are acquired.
+are acquired. Note: some of these capabilities are being merged into DASCore. 
 
-[SpoolProcessing](https://github.com/DASDAE/SpoolProcessing) is a package ---with description to add----- 
+[SpoolProcessing](https://github.com/DASDAE/SpoolProcessing) is a package that can do some 
+basic downsampling (with anti-alias) or standard deviation processing of data. Note: some of these 
+capabilities are being merged into DASCore. 
 
 
 
