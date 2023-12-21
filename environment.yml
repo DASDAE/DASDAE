@@ -1,0 +1,6 @@
+name: dasdae
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
