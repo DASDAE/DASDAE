@@ -4,3 +4,5 @@ channels:
   - defaults
 dependencies:
   - numpy
+  - jupyter
+  - nbformat
