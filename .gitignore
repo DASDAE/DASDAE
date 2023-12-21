@@ -127,3 +127,32 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# misc
+scratch/**
+.ruff_cache
+
+
+# pyenv python configuration file
+.python-version
+
+# pycharm
+.idea
+
+# Ipython stuff
+.ipynb_checkpoints
+
+# linux/osx garbage
+*~
+*.swp
+.DS_store*
+
+# docs
+docs/api/*
+_autosummary
+.quarto/
+docs/_site
+docs/site_libs
+docs/**/*.ipynb
+docs/*.css

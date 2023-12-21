@@ -1,0 +1,80 @@
+# Create documentation for stable (latest version) and deploy
+name: BuildDeployStableDocs
+
+on:
+  # Runs when creating a new release
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  deployments: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get tags
+        run: git fetch --tags origin
+
+      - name: Setup conda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: 'latest'
+          python-version: "3.11"
+          activate-environment: dascore
+          environment-file: environment.yml
+          condarc-file: .github/test_condarc.yml
+
+      - name: install dasdae with docbuild reqs
+        shell: bash -l {0}
+        run: |
+          conda install -c conda-forge pandoc
+          python -m pip install -e .[dev]
+
+      - name: Install quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.4.515
+          tinytex: true
+
+      - name: print quarto version
+        run: |
+          quarto --version
+
+      - name: Render Quarto Project
+        shell: bash -l {0}
+        run: |
+          quarto render docs
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'docs/_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

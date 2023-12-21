@@ -1,0 +1,79 @@
+project:
+  type: website
+  output-dir: _site
+
+execute:
+  warning: false
+
+format:
+  html:
+    toc: true
+    theme:
+      light: cosmo
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+
+website:
+  title: DASDAE
+  repo-url: https://github.com/dasdae/DASDAE
+  site-path: /docs
+  site-url: https://www.dasdae.org
+
+  image: "_static/dasdae-logo.png"
+  favicon: "_static/dasdae-logo.png"
+  repo-subdir: docs
+  repo-branch: main
+  repo-actions: [edit]
+  page-navigation: true
+
+  navbar:
+    logo: _static/dasdae-logo.png
+    logo-alt: "DASDAE  logo."
+    background: dark
+    search: true
+    left:
+      - text: Introduction
+        file: index.qmd
+
+      - text: Contributing
+        file: contributing/contributing.qmd
+
+    right:
+
+      - icon: github
+        href: https://github.com/dasdae/dasdae
+        aria-label: DASDAE GitHub
+
+  sidebar:
+    - id: about
+      title: "About"
+      style: "floating"
+      collapse-level: 2
+      logo: "_static/dasdae-logo.png"
+      search: true
+      contents:
+        - text: Introduction
+          href: index.qmd
+
+        - text: People
+          href: points_of_contact.qmd
+
+        - text: Acknowledgements
+          href: acknowledgements.qmd
+
+    - id: contributing
+      title: "Contributing"
+      contents:
+        - contributing/contributing.qmd
+
+        - text: Code of Conduct
+          href: contributing/code_of_conduct.qmd
+
+        - text: Documentation
+          href: contributing/documentation.qmd
+
+        - text: "General Guidelines"
+          href: contributing/general_guidelines.qmd
+
+bibliography: references.bib

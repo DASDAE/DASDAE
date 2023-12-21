@@ -1,0 +1,9 @@
+name: dasdae
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - jupyter
+  - nbformat
+  - dascore
