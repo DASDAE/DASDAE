@@ -132,6 +132,8 @@ dmypy.json
 # misc
 scratch/**
 .ruff_cache
+.worktrees/
+.superpowers/
 
 
 # pyenv python configuration file
