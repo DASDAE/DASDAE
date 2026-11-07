@@ -9,7 +9,7 @@ format:
   html:
     toc: true
     theme:
-      light: cosmo
+      light: litera
     code-copy: true
     code-overflow: wrap
     css: styles.css
